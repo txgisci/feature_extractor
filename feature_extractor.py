@@ -46,3 +46,5 @@ with open(input_file, 'r') as f:
             # writes image to output file
             with open(output_file, 'wb') as f:
                 f.write(response.content)
+
+                
