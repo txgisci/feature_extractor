@@ -38,3 +38,5 @@ with open(input_file, 'r') as f:
             output_file = "{}{}.jpg".format(output_path, img_id)
             with open(output_file, 'wb') as f:
                 f.write(response.content)
+
+                
