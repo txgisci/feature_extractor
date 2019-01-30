@@ -4,13 +4,14 @@
 import requests
 import csv
 import os
+import re
 
 # test values entered in via CLI
 input_file = "Basin.csv"
 img_size = "small"
 
+# main url
 url = "https://eol.jsc.nasa.gov/DatabaseImages/ESC"
-
 
 # creates output folder in current working directory
 cwd = os.getcwd()
@@ -26,8 +27,9 @@ with open(input_file, 'r') as f:
         # populates the current image information for url
         img_id = row[0]
 
-        #### If statement for if mission name starts with NAS, only 5 letters in mission name
-        mission = img_id[:6]
+        # isolates the mission name
+        mission = re.findall(r'\w+',img_id)[0]
+
         img_url = "{}/{}/{}/{}.JPG".format(url, img_size, mission, img_id)
         response = requests.get(img_url)
         # executes if http request successful
