@@ -10,7 +10,6 @@ input_file = "Basin.csv"
 img_size = "small"
 
 url = "https://eol.jsc.nasa.gov/DatabaseImages/ESC"
-https://eol.jsc.nasa.gov/DatabaseImages/ESC/small/STS107/STS107-E-5251.JPG
 
 
 # creates output folder in current working directory
