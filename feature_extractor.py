@@ -7,12 +7,12 @@ import os
 import re
 
 # test values entered in via CLI
-input_file = "Island.csv"
+input_file = "Volcano.csv"
+
 new_folder = input_file[:-4]
+
+#input folder
 input_file = 'inputs//' + input_file
-
-
-#################################### read in input file from folder here
 
 # main url
 url = "https://eol.jsc.nasa.gov/DatabaseImages"
@@ -54,7 +54,7 @@ with open(input_file, 'r') as f:
         # regular expression isolates the mission name
         mission = re.findall(r'\w+',img_id)[0]
 
-        if mission[:3] == 'ISS':
+        if 'E' in img_id:
             abbrev = 'ESC'
             if img_size == 'lowres':
                 img_size = 'small'
