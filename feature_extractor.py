@@ -1,49 +1,60 @@
-# investigate all possible mission names
-# add error check if file not present
 
+from pathlib import Path
+import argparse # CLI library
 import requests
 import csv
 import os
 import re
+import sys
 
-# test values entered in via CLI
-input_file = "Volcano.csv"
 
-new_folder = input_file[:-4]
 
-#input folder
-input_file = 'inputs//' + input_file
+# CLI accepting user input
+parser = argparse.ArgumentParser(prog='feature_extractor', description='Process image ids.')
+parser.add_argument('feature_file', action='store', type=str, help='File to be read in')
+parser.add_argument('size', action='store', type=str, help='size')
+args = parser.parse_args()
+
+#input_file = '.\\inputs\\' + args.feature_file
+input_file = os.path.join(".","inputs", args.feature_file)
+
+file = Path(input_file)
+try:
+    file.resolve()
+except FileNotFoundError:
+    print("*** ERROR: File: " + args.feature_file + " does not exist. ***")
+    sys.exit()
+else:
+    new_folder = args.feature_file[:-4]
 
 # main url
 url = "https://eol.jsc.nasa.gov/DatabaseImages"
 
-# creates output folder in current working directory
-cwd = os.getcwd()
-# deletes '.csv' at the end of file name entered
-
-
 # creating directory with full permission in octal
 mode = 0o777
-# raises an OSError if target directory already exists
-exist_ok = False
 
-################### IF not present then call makedirs()
-################### on outputs folder first
-if not os.path.isdir('./outputs'):
-    outputs_dir = cwd + '\\outputs\\'
-    os.makedirs(outputs_dir, mode=mode, exist_ok=exist_ok)
 
-output_path = cwd + '\\outputs\\' + new_folder + '\\'
-# generates output folder
-os.makedirs(output_path, mode=mode, exist_ok=exist_ok)
+# Create an outputs folder if one doesn't already exist
+if not os.path.isdir(os.path.join(".","outputs")):
+    outputs_dir = os.path.join(".","outputs")
+    os.makedirs(outputs_dir, mode=mode)
+
+output_path = os.path.join(".","outputs", new_folder)
+
+# generates output folder for feature
+try:
+    os.makedirs(output_path, mode=mode)
+except:
+    print("\n*** ERROR: Cannot create folder with name " + new_folder +\
+          " because the folder alread exists. ***")
+    print("\nTerminating script.")
+    sys.exit()
 
 # reads in csv file
 with open(input_file, 'r') as f:
 
     # resets to small every time. Need to re-code
     img_size = "small"
-
-
 
     # reader object containes all csv values
     reader = csv.reader(f)
@@ -54,6 +65,7 @@ with open(input_file, 'r') as f:
         # regular expression isolates the mission name
         mission = re.findall(r'\w+',img_id)[0]
 
+        # Accounting for varying mission names
         if 'E' in img_id:
             abbrev = 'ESC'
             if img_size == 'lowres':
@@ -67,13 +79,12 @@ with open(input_file, 'r') as f:
             elif img_size == 'large':
                 img_size = 'highres'
 
-
         # url of specified image
-        img_url = "{}/{}/{}/{}/{}.JPG".format(url, abbrev, img_size, mission, img_id)
+        img_url = "{}/{}/{}/{}/{}.JPG".format(url, abbrev, img_size, mission,\
+                                              img_id)
 
         # GET request to site
         response = requests.get(img_url)
-
 
         # 404 code = image not found
         if response.status_code == 404:
