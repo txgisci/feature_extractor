@@ -1,5 +1,4 @@
 
-from pathlib import Path
 import argparse # CLI library
 import requests
 import csv
@@ -16,12 +15,12 @@ args = parser.parse_args()
 #input_file = '.\\inputs\\' + args.feature_file
 input_file = os.path.join(".","inputs", args.feature_file)
 
-file = Path(input_file)
-
 try:
-    file.resolve()
+    f = open(input_file)
+    f.close()
 except FileNotFoundError:
     print("*** ERROR: File: " + args.feature_file + " does not exist. ***")
+    print("\nTerminating script.")
     sys.exit()
 else:
     new_folder = args.feature_file[:-4]
