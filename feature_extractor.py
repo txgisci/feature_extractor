@@ -12,8 +12,8 @@ parser.add_argument('feature_file', action='store', type=str, help='File to be r
 parser.add_argument('size', action='store', type=str, help='size')
 args = parser.parse_args()
 
-#input_file = '.\\inputs\\' + args.feature_file
 input_file = os.path.join(".","inputs", args.feature_file)
+img_size = args.size
 
 try:
     f = open(input_file)
@@ -31,13 +31,14 @@ url = "https://eol.jsc.nasa.gov/DatabaseImages"
 # creating directory with full permission in octal
 mode = 0o777
 
-# Create an outputs folder if one doesn't already exist
-if not os.path.isdir(os.path.join(".","outputs")):
-    outputs_dir = os.path.join(".","outputs")
+outputs_dir = os.path.join(".","outputs")
+
+# Create an outputs folder if one doesn't exist
+if not os.path.isdir(outputs_dir):
     os.makedirs(outputs_dir, mode=mode)
 
-output_path = os.path.join(".","outputs", new_folder, "")
-# generates output folder for feature
+output_path = os.path.join(outputs_dir, new_folder, "")
+
 try:
     os.makedirs(output_path, mode=mode)
 except:
@@ -46,11 +47,8 @@ except:
     print("\nTerminating script.")
     sys.exit()
 
-# reads in csv file
+# reads in csv, closes file
 with open(input_file, 'r') as f:
-
-    # resets to small every time. Need to re-code
-    img_size = "small"
 
     # reader object containes all csv values
     reader = csv.reader(f)
