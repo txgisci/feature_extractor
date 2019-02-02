@@ -7,8 +7,6 @@ import os
 import re
 import sys
 
-
-
 # CLI accepting user input
 parser = argparse.ArgumentParser(prog='feature_extractor', description='Process image ids.')
 parser.add_argument('feature_file', action='store', type=str, help='File to be read in')
@@ -19,6 +17,7 @@ args = parser.parse_args()
 input_file = os.path.join(".","inputs", args.feature_file)
 
 file = Path(input_file)
+print(input_file)
 try:
     file.resolve()
 except FileNotFoundError:
@@ -39,8 +38,7 @@ if not os.path.isdir(os.path.join(".","outputs")):
     outputs_dir = os.path.join(".","outputs")
     os.makedirs(outputs_dir, mode=mode)
 
-output_path = os.path.join(".","outputs", new_folder)
-
+output_path = os.path.join(".","outputs", new_folder, "")
 # generates output folder for feature
 try:
     os.makedirs(output_path, mode=mode)
@@ -95,6 +93,7 @@ with open(input_file, 'r') as f:
             print(response.status_code)
             # creates image path and name
             output_file = "{}{}.jpg".format(output_path, img_id)
+            print(output_file)
 
             # writes image to output file
             with open(output_file, 'wb') as i:
