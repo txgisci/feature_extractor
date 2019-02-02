@@ -17,7 +17,7 @@ args = parser.parse_args()
 input_file = os.path.join(".","inputs", args.feature_file)
 
 file = Path(input_file)
-print(input_file)
+
 try:
     file.resolve()
 except FileNotFoundError:
@@ -31,7 +31,6 @@ url = "https://eol.jsc.nasa.gov/DatabaseImages"
 
 # creating directory with full permission in octal
 mode = 0o777
-
 
 # Create an outputs folder if one doesn't already exist
 if not os.path.isdir(os.path.join(".","outputs")):
@@ -93,7 +92,6 @@ with open(input_file, 'r') as f:
             print(response.status_code)
             # creates image path and name
             output_file = "{}{}.jpg".format(output_path, img_id)
-            print(output_file)
 
             # writes image to output file
             with open(output_file, 'wb') as i:
