@@ -26,7 +26,6 @@ except FileNotFoundError:
 else:
     new_folder = args.feature_file[:-4]
 
-print(new_folder)
 
 # main url
 url = "https://eol.jsc.nasa.gov/DatabaseImages"
