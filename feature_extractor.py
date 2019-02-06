@@ -1,4 +1,3 @@
-
 import argparse # CLI library
 import requests
 import csv
@@ -26,7 +25,6 @@ except FileNotFoundError:
 else:
     new_folder = args.feature_file[:-4]
 
-print(new_folder)
 
 # main url
 url = "https://eol.jsc.nasa.gov/DatabaseImages"
@@ -50,13 +48,25 @@ except:
     print("\nTerminating script.")
     sys.exit()
 
+# Finds the number of ids in csv file
+with open(input_file, 'r') as p:
+        total_count = sum(1 for counter1 in p)
+
+
+print("\nTotal images to be downloaded: " + str(total_count) + "\n")
+
+# counter for progress of image downloads
+count1 = 0
+
 # reads in csv, closes file
 with open(input_file, 'r') as f:
 
     # reader object containes all csv values
     reader = csv.reader(f)
+
     # row = a python list of values in each line of csv file
     for row in reader:
+
         # populates the current image information for url
         img_id = row[0]
         # regular expression isolates the mission name
@@ -89,7 +99,9 @@ with open(input_file, 'r') as f:
             print(img_url)
         # 200 code = image found and returned
         elif response.status_code == 200:
-            print(response.status_code)
+            count1 += 1
+
+            print("Downloaded " + str(count1) + " / " + str(total_count))
             # creates image path and name
             output_file = "{}{}.jpg".format(output_path, img_id)
 
