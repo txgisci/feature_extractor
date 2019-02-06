@@ -34,9 +34,9 @@ Step 1. Make sure you are in the master branch in the correct repository
 https://github.com/txgisci/feature_extractor
 ```
 
-Step 2. Click the gree drop down option titled 'Clone or download'.
+Step 2. Click the green drop down option titled 'Clone or download'.
 
-Step 3. Download the zip file, open your command prompt and navigate to the 'feature extractor' repository
+Step 3. Download the zip file, open your command prompt and navigate to the newly downloaded'feature extractor' repository
 
 ## To get the script running:
 
