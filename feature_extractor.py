@@ -5,6 +5,7 @@ import csv
 import os
 import re
 import sys
+from pathlib import Path
 
 # CLI accepting user input
 parser = argparse.ArgumentParser(prog='feature_extractor', description='Process image ids.')
@@ -15,15 +16,15 @@ args = parser.parse_args()
 input_file = os.path.join(".","inputs", args.feature_file)
 img_size = args.size
 
+file = Path(input_file)
 try:
-    f = open(input_file)
-    f.close()
+    file.resolve()
 except FileNotFoundError:
     print("*** ERROR: File: " + args.feature_file + " does not exist. ***")
     print("\nTerminating script.")
     sys.exit()
 else:
-    new_folder = args.feature_file[:-4]
+    new_folder = args.feature_file[:-3]
 
 # main url
 url = "https://eol.jsc.nasa.gov/DatabaseImages"
