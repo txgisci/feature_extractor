@@ -24,7 +24,9 @@ except FileNotFoundError:
     print("\nTerminating script.")
     sys.exit()
 else:
-    new_folder = args.feature_file[:-3]
+    new_folder = args.feature_file[:-4]
+
+print(new_folder)
 
 # main url
 url = "https://eol.jsc.nasa.gov/DatabaseImages"
