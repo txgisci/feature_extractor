@@ -44,7 +44,7 @@ NOTE: All files are already present in the 'inputs' file.
 
 The CLI (Command Line Interface) script takes 2 arguments: The name of the feature file you want to read in and the size of the image (small or large)
 
-An example command would be something like:
+### An example command would be something like:
 
 ```
 python feature_extractor.py basin.csv small 
