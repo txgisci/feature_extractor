@@ -36,9 +36,20 @@ https://github.com/txgisci/feature_extractor
 
 Step 2. Click the gree drop down option titled 'Clone or download'.
 
-### For linux distributions
+Step 3. Download the zip file, open your command prompt and navigate to the 'feature extractor' repository
 
-Step 3. Enter in terminal
+## To get the script running:
+
+NOTE: All files are already present in the 'inputs' file. 
+
+The CLI (Command Line Interface) script takes 2 arguments: The name of the feature file you want to read in and the size of the image (small or large)
+
+An example command would be something like:
+
+```
+python feature_extractor.py basin.csv small 
+```
+
 
 
 
