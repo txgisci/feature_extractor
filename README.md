@@ -1,6 +1,6 @@
 # Feature Extractor Script
 
-The purpose of the tool is to download specified image ids from https://eol.jsc.nasa.gov/SearchPhotos/ 
+The purpose of the tool is to automate the process of downloading specified images from https://eol.jsc.nasa.gov/SearchPhotos/ 
 
 
 ## Installing
@@ -27,4 +27,19 @@ https://www.python.org/downloads/
 ```
 
 
-## Downlading repository to your local machine
+## Downlading the repository to your local machine
+
+Step 1. Make sure you are in the master branch in the correct repository
+```
+https://github.com/txgisci/feature_extractor
+```
+
+Step 2. Click the gree drop down option titled 'Clone or download'.
+
+### For linux distributions
+
+Step 3. Enter in terminal
+
+
+
+
