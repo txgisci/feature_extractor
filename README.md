@@ -20,7 +20,7 @@ https://conda.io/docs/user-guide/getting-started.html
 ```
 
 ### Alternative to Conda
-Install a version of Python with version 3.4 or greater.
+Install Python programming language with version 3.4 or greater.
 
 ```
 https://www.python.org/downloads/
