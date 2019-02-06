@@ -20,10 +20,11 @@ https://conda.io/docs/user-guide/getting-started.html
 ```
 
 ### Alternative to Conda
-install a version of Python with version 3.4 or greater
-'''
+Install a version of Python with version 3.4 or greater.
+
+```
 https://www.python.org/downloads/
-'''
+```
 
 
 ## Downlading repository to your local machine
