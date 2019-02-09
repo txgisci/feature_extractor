@@ -1,6 +1,6 @@
 # Feature Extractor Script
 
-The purpose of the tool is to automate the process of downloading specified images from https://eol.jsc.nasa.gov/SearchPhotos/ 
+The purpose of the CLI script is to automate the process of downloading specified images from https://eol.jsc.nasa.gov/SearchPhotos/ 
 
 
 ## Installing
@@ -19,37 +19,42 @@ Follow the sections 'Before you start', 'Contents' and 'Starting conda' on Conda
 https://conda.io/docs/user-guide/getting-started.html
 ```
 
-### Alternative to Conda
-Install Python programming language with version 3.4 or greater.
+Step 3. Set Up the Environment:
 
+Use a Python version of 3.4 or greater. 
+
+If you don't already have requests installed as a package, enter your anacondona prompt and type:
 ```
-https://www.python.org/downloads/
+pip3 install requests 
 ```
+
 
 
 ## Downlading the repository to your local machine
 
-Step 1. Make sure you are in the master branch in the correct repository
+Step 1. Follow the link below and confirm you are in the 'master' branch.
 ```
 https://github.com/txgisci/feature_extractor
 ```
 
 Step 2. Click the green drop down option titled 'Clone or download'.
 
-Step 3. Download the zip file, open your command prompt and navigate to the newly downloaded'feature extractor' repository
+Step 3. Download the zip file, open your command prompt and navigate to the newly downloaded 'feature extractor' repository
 
 ## To get the script running:
 
-NOTE: All files are already present in the 'inputs' file. 
+NOTE: All csv files are already present in the 'inputs' file. 
 
-The CLI (Command Line Interface) script takes 2 arguments: The name of the feature file you want to read in and the size of the image (small or large)
+The script takes 2 arguments: The name of the feature file you want to read in and the size of the image (small/low resolution or large/high resolution)
 
 ### An example command would be something like:
 
 ```
 python feature_extractor.py basin.csv small 
 ```
-
+The script will display progress messages, alerting the user everytime an image is successfully downloaded.
+All images will populate in a folder named the same name of the csv file the user typed in. 
+This new folder will appear in the 'outputs' folder.
 
 
 
