@@ -53,7 +53,9 @@ The script takes 2 arguments: The name of the feature file you want to read in a
 python feature_extractor.py basin.csv small 
 ```
 The script will display progress messages, alerting the user everytime an image is successfully downloaded.
+
 All images will populate in a folder named the same name of the csv file the user typed in. 
+
 This new folder will appear in the 'outputs' folder.
 
 
