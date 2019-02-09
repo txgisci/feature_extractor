@@ -45,8 +45,7 @@ Step 3. Download the zip file, open your command prompt and navigate to the newl
 
 NOTE: All csv files are already present in the 'inputs' file. 
 
-The script takes 2 arguments: The name of the feature file you want to read in and the size of the image (small/low resolution or large/high resolution)
-
+The script takes 2 arguments: The name of the feature file you want to read in and the size/resolution of the image (small or large)
 ### An example command would be something like:
 
 ```
