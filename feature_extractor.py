@@ -17,7 +17,7 @@ parser.add_argument('size', action='store', type=str, help='size')
 args = parser.parse_args()
 
 # Setting up user inputs
-input_file = os.path.join(''.'','inputs', args.feature_file)
+input_file = os.path.join('.','inputs', args.feature_file)
 img_size = args.size
 
 # Checking if input file is present
