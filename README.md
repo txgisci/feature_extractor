@@ -41,18 +41,18 @@ Step 2. Click the green drop down option titled 'Clone or download'.
 
 Step 3. Download the zip file, open your command prompt and navigate to the newly downloaded 'feature extractor' repository
 
-## To get the script running:
+## To get the script running
 
 NOTE: All csv files are already present in the 'inputs' file. 
 
 The script takes 2 arguments: The name of the feature file you want to read in and the size/resolution of the image (small or large)
-### An example command would be something like:
+### An example command would be something like
 
 ```
 python feature_extractor.py basin.csv small 
 ```
 
-### Expected output:
+### Expected output
 
 The script will display progress messages, alerting the user everytime an image is successfully downloaded.
 
