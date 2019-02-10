@@ -23,7 +23,7 @@ Step 3. Set Up the Environment:
 
 Use a Python version of 3.4 or greater. 
 
-If you don't already have requests installed as a package, enter your anacondona prompt and type:
+If you don't already have requests installed as a package, open your anacondona prompt and type:
 ```
 pip3 install requests 
 ```
