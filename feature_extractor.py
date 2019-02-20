@@ -49,7 +49,8 @@ if not os.path.isdir(outputs_dir):
 # Alerts for folder duplicate
 output_path = os.path.join(outputs_dir, new_folder, "")
 try:
-    os.makedirs(output_path, mode=mode)
+#    os.makedirs(output_path, mode=mode)
+    print("hey")
 except:
     print("\n*** ERROR: Cannot create folder with name " + new_folder +
           " because the folder alread exists. ***")
@@ -123,7 +124,7 @@ with open(input_file, 'r') as f:
                       str(total_count))
 
                 # Creates image path and name
-                output_file = '{}{}.jpg'.format(output_path, img_id)
+                output_file = '{}{}.jpg'.format('./outputs/', img_id)
 
                 # Writes image to output file
                 with open(output_file, 'wb') as i:
