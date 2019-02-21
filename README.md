@@ -45,12 +45,26 @@ Step 3. Download the zip file, open your command prompt and navigate to the newl
 
 NOTE: All csv files are already present in the 'inputs' file. 
 
-The script takes 2 arguments: The name of the feature file you want to read in and the size/resolution of the image (small or large)
+The script takes 1 argument: The name of the feature file you want to read in 
 ### An example command would be something like
 
 ```
-python feature_extractor.py basin.csv small 
+python feature_extractor.py basin.csv
 ```
+
+## Optional arguments 
+
+1. By default, the script downloads the high resolution version of the image. To download the low resolution version include the flag '--small' 
+```
+python feature_extractor.py basin.csv --small
+```
+
+2. By default, the script downloads images without crosshairs. To download the images with crosshairs include the flag '--with_crosshairs'
+```
+python feature_extractor.py basin.csv --with_crosshairs
+```
+The crosshairs image only comes in the large size.
+
 
 ### Expected output
 
