@@ -47,13 +47,13 @@ NOTE: All available feature files are already present in the 'inputs' file.
 You can also create a custom list of image ids you want to download and place the csv file in the inputs folder. 
 
 The script takes 1 argument: The name of the file you want to read in 
-### An example command would be something like
+##### An example command would be something like
 
 ```
 python feature_extractor.py basin.csv
 ```
 
-## Optional arguments 
+### Optional arguments 
 
 1. By default, the script downloads the high resolution version of the image. To download the low resolution version include the flag '--small' 
 ```
@@ -67,7 +67,7 @@ python feature_extractor.py basin.csv --with_crosshairs
 The crosshairs image only comes in the high-resolution option. Including the '--small' flag won't affect the default output. 
 
 
-### Expected output
+## Expected output
 
 The script will display progress messages, alerting the user everytime an image is successfully processed.
 
