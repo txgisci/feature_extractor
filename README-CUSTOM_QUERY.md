@@ -36,9 +36,9 @@
   
   •	Run feature_extractor python script with the following command in command prompt: 
   ```
-  python feature_extractor.py basin.csv small
+  python feature_extractor.py basin.csv
   ```
-  Note: Substitute your queried feature name for “basin.” You can also substitute “large” for “small” if you would prefer a larger image     size.
+  Note: Substitute your queried feature name for “basin.” 
   
   •	Navigate to your outputs folder to view downloaded images from your personal image query!
 
