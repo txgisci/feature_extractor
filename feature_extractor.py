@@ -21,7 +21,7 @@ parser.add_argument('--with_crosshairs', action='store_true', help="Download"\
                     " images with crosshairs (default: no crosshairs)")
 args = parser.parse_args()
 
-# User enters the small option cia CLI
+# User enters the small option via CLI
 if args.small:
     img_size = 'small'
 else:
@@ -69,7 +69,7 @@ try:
     os.makedirs(output_path, mode=mode)
 except FileExistsError:
     print("\n*** ERROR: Cannot create folder with name " + new_folder +
-          " because the folder alread exists. ***")
+          " because the folder already exists. ***")
     print("\nTerminating script.")
     sys.exit()
 
@@ -80,9 +80,8 @@ with open(input_file, 'r') as p:
 # Intitial output message
 print("\nTotal number of image ids in file: " + str(total_count) + "\n")
 
-# Counter for progress of image downloads
+# Counter for progress and success of image downloads
 count_total = 0
-
 count_success = 0
 
 
@@ -131,7 +130,6 @@ with open(input_file, 'r') as f:
         # Prints to screen the success or failure of download
         try:
             response = s.get(img_url)
-
         except requests.exceptions.RetryError:
             print("*** ERROR: Reached the max amount of retries ( " +
             str(total_retries) + " ) for image id: " + str(img_id) + " ***\n")
