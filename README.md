@@ -21,9 +21,9 @@ https://conda.io/docs/user-guide/getting-started.html
 
 Step 3. Set Up the Environment:
 
-Use a Python version of 3.4 or greater. 
+Create a new environment with a Python version of 3.4 or greater. 
 
-If you don't already have requests installed as a package, open your anacondona prompt and type:
+Requests should be the only non-built-in Python library imported into the script. If you don't already have requests installed as a package, open your anacondona prompt and type:
 ```
 pip3 install requests 
 ```
@@ -43,7 +43,7 @@ Step 3. Download the zip file, open your command prompt and navigate to the newl
 
 ## To get the script running
 
-NOTE: All available feature files are already present in the 'inputs' file. 
+NOTE: All available feature files are already present in the 'inputs' folder. 
 You can also create a custom list of image ids you want to download and place the csv file in the inputs folder. 
 
 The script takes 1 argument: The name of the file you want to read in 
