@@ -25,7 +25,7 @@ args = parser.parse_args()
 if args.large:
     img_size = 'large'
 else:
-    img_size = 'small'
+    img_size = 'small' # Default due to older missions not capturing high res
 
 # Max number of retries
 total_retries = 5
