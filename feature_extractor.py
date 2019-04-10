@@ -15,17 +15,17 @@ parser = argparse.ArgumentParser(prog='feature_extractor',
                                  " GAPE by pulling images based on URL.')
 parser.add_argument('feature_file', action='store', type=str,
                     help='CSV file of image ids')
-parser.add_argument('--small', action='store_true', help="Download images with"\
-                    " low resolution (default: high resolution)")
+parser.add_argument('--large', action='store_true', help="Download images with"\
+                    " high resolution (default: low resolution)")
 parser.add_argument('--with_crosshairs', action='store_true', help="Download"\
                     " images with crosshairs (default: no crosshairs)")
 args = parser.parse_args()
 
 # User enters the small option via CLI
-if args.small:
-    img_size = 'small'
-else:
+if args.large:
     img_size = 'large'
+else:
+    img_size = 'small'
 
 # Max number of retries
 total_retries = 5
